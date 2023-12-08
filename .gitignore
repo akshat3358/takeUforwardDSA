@@ -11,6 +11,10 @@ out/
 .settings
 .springBeans
 .sts4-cache
+takeUforwardDSA.iml
+vcs.xml
+modules.xml
+misc.xml
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
