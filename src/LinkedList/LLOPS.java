@@ -1,20 +1,22 @@
 package LinkedList;
 
-class Node {
-    int data;
-    Node next;
-
-    Node(int data1,Node next1){
-        this.data = data1;
-        this.next = next1;
-    }
-    Node(int data1){
-        this.data = data1;
-        this.next = null;
-    }
-
-}
 public class LLOPS {
+
+    public static class Node {
+        int data;
+        Node next;
+
+        Node(int data1,Node next1){
+            this.data = data1;
+            this.next = next1;
+        }
+        Node(int data1){
+            this.data = data1;
+            this.next = null;
+        }
+
+    }
+
     public static void main(String[] args) {
 
         int[] arr = {2,3,4,5};
@@ -29,18 +31,18 @@ public class LLOPS {
         //head = insertAtHead(head,111);
         //head = insertAtTail(head,101);
         //head  = insertAtK(head,101,1);
-        head = insertBeforeValue(head,105,6);
+        head = insertBeforeValue(head,105,2);
         printLL(head);
     }
 
-    private static  void printLL(Node head){
+    public static  void printLL(Node head){
         Node temp = head;
         while(temp != null){
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
     }
-    private static int lengthOfLL(Node head){
+    public static int lengthOfLL(Node head){
         int cnt=0;
         Node temp=head;
         while(temp!=null){
@@ -49,7 +51,7 @@ public class LLOPS {
         }
         return cnt;
     }
-    private static Node convertArr2LL(int[] arr){
+    public static Node convertArr2LL(int[] arr){
         Node head = new Node(arr[0]);
         Node mover = head;
         for(int i=1;i<arr.length;i++){
@@ -60,7 +62,7 @@ public class LLOPS {
         return head;
     }
 
-    private static int checkIfPresent(Node head,int val){
+    public static int checkIfPresent(Node head,int val){
         if(head==null){
             return 0;
         }
@@ -74,13 +76,13 @@ public class LLOPS {
         return 0;
     }
 
-    private static Node removeHead(Node head){
+    public static Node removeHead(Node head){
         if(head == null)    return  head;
         head = head.next;
         return head;
     }
 
-    private static Node removeTail(Node head){
+    public static Node removeTail(Node head){
         if(head == null || head.next == null ){
             return null;
         }
@@ -92,7 +94,7 @@ public class LLOPS {
         return head;
     }
 
-    private static Node deleteK(Node head,int k){
+    public static Node deleteK(Node head,int k){
         if(head ==null){
             return head;
         }
@@ -116,7 +118,7 @@ public class LLOPS {
         return head;
     }
 
-    private static Node deleteEle(Node head,int el){
+    public static Node deleteEle(Node head,int el){
         if(head ==null){
             return head;
         }
@@ -137,11 +139,11 @@ public class LLOPS {
         }
         return head;
     }
-    private static Node insertAtHead(Node head, int val){
+    public static Node insertAtHead(Node head, int val){
         Node temp = new Node(val,head);
         return temp;
     }
-    private static Node insertAtTail(Node head,int val){
+    public static Node insertAtTail(Node head,int val){
         if(head==null){
             return new Node(val);
         }
@@ -152,7 +154,7 @@ public class LLOPS {
         temp.next = new Node(val);
         return head;
     }
-    private static Node insertAtK(Node head,int el,int k){
+    public static Node insertAtK(Node head,int el,int k){
         if(head == null){
             if(k==1){
                 return new Node(el);
@@ -178,7 +180,7 @@ public class LLOPS {
         return head;
     }
 
-    private static Node insertBeforeValue(Node head,int el,int val){
+    public static Node insertBeforeValue(Node head,int el,int val){
         if(head == null){
             return null;
         }
